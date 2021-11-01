@@ -1,0 +1,108 @@
+:root {
+  --white: #fff;
+  --black: #000;
+  --gray: rgb(128, 128, 128);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+html {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  padding: 20px 0;
+}
+
+#root {
+  width: 1280px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 240px);
+  gap: 20px;
+}
+
+.form {
+  grid-column: 1 / -1;
+}
+
+.form__input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--black);
+  border-radius: 3px;
+}
+
+.table {
+  width: 100%;
+  grid-column: 1 / -1;
+  word-wrap: break-word;
+  border-collapse: collapse;
+}
+
+.table__header {
+  cursor: pointer;
+}
+
+.table__header:hover {
+  background-color: var(--gray);
+  color: var(--white);
+}
+
+.table__header,
+.table__cell {
+  border: 1px solid var(--black);
+  padding: 5px;
+}
+
+.table__cell {
+  width: 30%;
+}
+
+.table__cell:first-child,
+.table__cell:last-child {
+  width: 5%;
+}
+
+.table__cell p {
+  margin: 0;
+}
+
+.table__button-sort {
+  padding: 5px;
+}
+
+.pagination {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+  justify-self: start;
+  justify-content: start;
+}
+
+.pagination__button {
+  max-width: 240px;
+  padding: 10px;
+}
